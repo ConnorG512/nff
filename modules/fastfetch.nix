@@ -9,153 +9,149 @@ let
   cfg = config.programs.fastfetch;
 in
 {
-  programs.fastfetch = {
+  options.programs.fastfetch = {
 
-    options = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = ''
+        Wether to enable the use of the fastfetch system information terminal application.
+      '';
+    };
 
-      enable = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
+    logo = {
+
+      width = lib.mkOption {
+        type = lib.types.int;
+        default = 65;
         description = ''
-          Wether to enable the use of the fastfetch system information terminal application.
+          Width of the logo.
         '';
       };
-      options = {
-        logo = {
+      
+      height = lib.mkOption {
+        type = lib.types.int;
+        default = 35;
+        description = ''
+          Height of the logo.
+        '';
+      };
 
-          width = lib.mkOption {
-            type = lib.types.int;
-            default = 65;
-            description = ''
-              Width of the logo.
-            '';
-          };
-          
-          height = lib.mkOption {
-            type = lib.types.int;
-            default = 35;
-            description = ''
-              Height of the logo.
-            '';
-          };
+      source = lib.mkOption {
+        type = lib.types.str;
+        default = "auto";
+        description = ''
+          Name of logo to display. use \"fastfetch --list-logos\" to see them all.
+        '';
+      };
 
-          source = lib.mkOption {
-            type = lib.types.str;
-            default = "auto";
-            description = ''
-              Name of logo to display. use \"fastfetch --list-logos\" to see them all.
-            '';
-          };
-
-          padding = {
-            
-            top = lib.mkOption {
-              type = lib.types.int;
-              default = 0;
-              description = ''
-                Logo top padding.
-              '';
-            };
-
-            left = lib.mkOption {
-              type = lib.types.int;
-              default = 0;
-              description = ''
-                Logo left padding.
-              '';
-            };
-            
-            right = lib.mkOption {
-              type = lib.types.int;
-              default = 2;
-              description = ''
-                Logo right padding.
-              '';
-            };
-          };
+      padding = {
+        
+        top = lib.mkOption {
+          type = lib.types.int;
+          default = 0;
+          description = ''
+            Logo top padding.
+          '';
         };
 
-        display = {
-
-          separator = lib.mkOption {
-            type = lib.types.str;
-            default = ": ";
-            description = ''
-              Separator between keys and values.
-            '';
-          };
-          
-          color = {
-            keys = lib.mkOption {
-              type = lib.types.str;
-              default = "blue";
-              description = ''
-                Key color.
-              '';
-            };
-            
-            title = lib.mkOption {
-              type = lib.types.str;
-              default = "red";
-              description = ''
-                Title color.
-              '';
-            };
-          };
-
-          key = {
-
-            width = lib.mkOption {
-              type = lib.types.int;
-              default = 12;
-              description = ''
-                Aligns keys to the given width.
-              '';
-            };
-
-            type = lib.mkOption {
-              type = lib.types.str;
-              default = "string";
-              description = ''
-                Key type.
-              '';
-            };
-          };
-
-          bar = {
-            width = lib.mkOption {
-              type = lib.types.int;
-              default = 10;
-              description = ''
-                With of percentage bar. 
-              '';
-            };
-
-            charElapsed = lib.mkOption {
-              type = lib.types.str;
-              default = "■";
-              description = ''
-                Character for the elapsed portion of the bar.
-              '';
-            };
-
-            charTotal = lib.mkOption {
-              type = lib.types.str;
-              default = "-";
-              description = ''
-                Character for the total portion of the bar.
-              '';
-            };
-          };
-          
-          percentType = lib.mkOption {
-            type = lib.types.int;
-            default = 9;
-            description = ''
-              Title color.
-            '';
-          };
+        left = lib.mkOption {
+          type = lib.types.int;
+          default = 0;
+          description = ''
+            Logo left padding.
+          '';
         };
+        
+        right = lib.mkOption {
+          type = lib.types.int;
+          default = 2;
+          description = ''
+            Logo right padding.
+          '';
+        };
+      };
+    };
+
+    display = {
+
+      separator = lib.mkOption {
+        type = lib.types.str;
+        default = ": ";
+        description = ''
+          Separator between keys and values.
+        '';
+      };
+      
+      color = {
+        keys = lib.mkOption {
+          type = lib.types.str;
+          default = "blue";
+          description = ''
+            Key color.
+          '';
+        };
+        
+        title = lib.mkOption {
+          type = lib.types.str;
+          default = "red";
+          description = ''
+            Title color.
+          '';
+        };
+      };
+
+      key = {
+
+        width = lib.mkOption {
+          type = lib.types.int;
+          default = 12;
+          description = ''
+            Aligns keys to the given width.
+          '';
+        };
+
+        type = lib.mkOption {
+          type = lib.types.str;
+          default = "string";
+          description = ''
+            Key type.
+          '';
+        };
+      };
+
+      bar = {
+        width = lib.mkOption {
+          type = lib.types.int;
+          default = 10;
+          description = ''
+            With of percentage bar. 
+          '';
+        };
+
+        charElapsed = lib.mkOption {
+          type = lib.types.str;
+          default = "■";
+          description = ''
+            Character for the elapsed portion of the bar.
+          '';
+        };
+
+        charTotal = lib.mkOption {
+          type = lib.types.str;
+          default = "-";
+          description = ''
+            Character for the total portion of the bar.
+          '';
+        };
+      };
+      
+      percentType = lib.mkOption {
+        type = lib.types.int;
+        default = 9;
+        description = ''
+          Title color.
+        '';
       };
     };
   };
