@@ -20,6 +20,14 @@ in
           Wether to enable the use of the fastfetch system information terminal application.
         '';
       };
+      
+      logo-source = lib.mkOption {
+        type = lib.types.str;
+        default = "auto";
+        description = ''
+          Name of logo to display. use \"fastfetch --list-logos\" to see them all.
+        '';
+      };
     };
   };
 
