@@ -159,7 +159,7 @@ in
           "top": ${toString cfg.logoPaddingTop},
           "left": ${toString cfg.logoPaddingLeft},
           "right": ${toString cfg.logoPaddingRight},
-        }
+        },
       },
       "display": {
         "seperator": "${cfg.displaySeperator}",
