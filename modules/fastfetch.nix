@@ -69,11 +69,11 @@ in
         '';
       };
       
-      displaySeperator = lib.mkOption {
+      displaySeparator = lib.mkOption {
         type = lib.types.str;
         default = ": ";
         description = ''
-          Seperator between keys and values.
+          Separator between keys and values.
         '';
       };
       
@@ -148,7 +148,7 @@ in
     environment.systemPackages = [pkgs.fastfetch];
 
     environment.etc."fastfetch/config.jsonc".text = ''
-      // Generated file.
+    // Generated file.
     {
       "logo": {
         "type": "auto",
@@ -158,25 +158,25 @@ in
         "padding": {
           "top": ${toString cfg.logoPaddingTop},
           "left": ${toString cfg.logoPaddingLeft},
-          "right": ${toString cfg.logoPaddingRight},
-        },
+          "right": ${toString cfg.logoPaddingRight}
+        }
       },
       "display": {
-        "seperator": "${cfg.displaySeperator}",
+        "separator": "${cfg.displaySeparator}",
         "color": {
-          "keys": "${cfg.displayColorKeys}"
+          "keys": "${cfg.displayColorKeys}",
           "title": "${cfg.displayColorTitle}"
         },
         "key": {
-          "width": ${toString cfg.displayKeyWidth}
-          "type": ${toString cfg.displayKeyType}
+          "width": ${toString cfg.displayKeyWidth},
+          "type": "${cfg.displayKeyType}"
         },
         "bar": {
           "width": ${toString cfg.displayBarWidth},
           "char": {
             "elapsed": "${cfg.displayBarCharElapsed}",
-            "total": "${cfg.displayBarCharTotal}",
-          },
+            "total": "${cfg.displayBarCharTotal}"
+          }
         },
         "percent": {
           "type": ${toString cfg.displayPercentType},
@@ -184,10 +184,10 @@ in
             "green": "green",
             "yellow": "light_yellow",
             "red": "light_red"
-          },
-        },
+          }
+        }
       },
-      "modules": [],
+      "modules": []
     }
     '';
   };
