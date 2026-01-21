@@ -134,8 +134,8 @@ in
       };
 
       displayPercentType = lib.mkOption {
-        type = lib.types.str;
-        default = "red";
+        type = lib.types.int;
+        default = 9;
         description = ''
           Title color.
         '';
