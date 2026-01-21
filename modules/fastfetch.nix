@@ -21,58 +21,54 @@ in
         '';
       };
       
-      logo = {
-        width = lib.mkOption {
-          type = lib.types.int;
-          default = 65;
-          description = ''
-            Width of the logo.
-          '';
-        };
-        
-        height = lib.mkOption {
-          type = lib.types.int;
-          default = 35;
-          description = ''
-            Height of the logo.
-          '';
-        };
-
-        source = lib.mkOption {
-          type = lib.types.str;
-          default = "auto";
-          description = ''
-            Name of logo to display. use \"fastfetch --list-logos\" to see them all.
-          '';
-        };
-
-        padding = {
-
-          top = lib.mkOption {
-            type = lib.types.int;
-            default = 0;
-            description = ''
-              Logo top padding.
-            '';
-          };
-          
-          left = lib.mkOption {
-            type = lib.types.int;
-            default = 0;
-            description = ''
-              Logo left padding.
-            '';
-          };
-          
-          right = lib.mkOption {
-            type = lib.types.int;
-            default = 2;
-            description = ''
-              Logo right padding.
-            '';
-          };
-        };
+      logoWidth = lib.mkOption {
+        type = lib.types.int;
+        default = 65;
+        description = ''
+          Width of the logo.
+        '';
       };
+      
+      logoHeight = lib.mkOption {
+        type = lib.types.int;
+        default = 35;
+        description = ''
+          Height of the logo.
+        '';
+      };
+
+      logoSource = lib.mkOption {
+        type = lib.types.str;
+        default = "auto";
+        description = ''
+          Name of logo to display. use \"fastfetch --list-logos\" to see them all.
+        '';
+      };
+
+      logoPaddingTop = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+        description = ''
+          Logo top padding.
+        '';
+      };
+      
+      logoPaddingLeft = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+        description = ''
+          Logo left padding.
+        '';
+      };
+      
+      logoPaddingRight = lib.mkOption {
+        type = lib.types.int;
+        default = 2;
+        description = ''
+          Logo right padding.
+        '';
+      };
+
     };
   };
 
@@ -84,13 +80,13 @@ in
 
       "logo": {
         "type": "auto",
-        "source": "${cfg.logo.source}",
-        "width": "${cfg.logo.width}",
-        "height": "${cfg.logo.height}",
+        "source": "${cfg.logoSource}",
+        "width": "${cfg.logoWidth}",
+        "height": "${cfg.logoHeight}",
         "padding": {
-          "top": "${cfg.logo.padding.top}",
-          "left": "${cfg.logo.padding.left}",
-          "right": "${cfg.logo.padding.right}",
+          "top": "${cfg.logoPaddingTop}",
+          "left": "${cfg.logoPaddingLeft}",
+          "right": "${cfg.logoPaddingRight}",
         },
       }
     '';
