@@ -68,6 +68,14 @@ in
           Logo right padding.
         '';
       };
+      
+      displaySeperator = lib.mkOption {
+        type = lib.types.str;
+        default = ": ";
+        description = ''
+          Seperator between keys and values.
+        '';
+      };
 
     };
   };
@@ -77,7 +85,7 @@ in
 
     environment.etc."fastfetch/config.jsonc".text = ''
       // Generated file.
-
+    {
       "logo": {
         "type": "auto",
         "source": "${cfg.logoSource}",
@@ -87,8 +95,13 @@ in
           "top": "${toString cfg.logoPaddingTop}",
           "left": "${toString cfg.logoPaddingLeft}",
           "right": "${toString cfg.logoPaddingRight}",
-        },
-      }
+        }
+      },
+      "display": {
+        "seperator": "${cfg.displaySeperator}",
+      },
+      "modules": [],
+    }
     '';
   };
 }
