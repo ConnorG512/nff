@@ -7,5 +7,6 @@
 
   outputs = { self, nixpkgs }: 
   {
+    nixosModules.fastfetch = import ./modules/fastfetch.nix;
   };
 }
