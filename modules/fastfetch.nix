@@ -76,6 +76,22 @@ in
           Seperator between keys and values.
         '';
       };
+      
+      displayColorKeys = lib.mkOption {
+        type = lib.types.str;
+        default = "blue";
+        description = ''
+          Key color.
+        '';
+      };
+      
+      displayColorTitle = lib.mkOption {
+        type = lib.types.str;
+        default = "red";
+        description = ''
+          Title color.
+        '';
+      };
 
     };
   };
@@ -99,6 +115,10 @@ in
       },
       "display": {
         "seperator": "${cfg.displaySeperator}",
+        "color": {
+          "keys": "${cfg.displayColorKeys}"
+          "title": "${cfg.displayColorTitle}"
+        },
       },
       "modules": [],
     }
