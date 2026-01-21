@@ -81,12 +81,12 @@ in
       "logo": {
         "type": "auto",
         "source": "${cfg.logoSource}",
-        "width": "${cfg.logoWidth}",
-        "height": "${cfg.logoHeight}",
+        "width": "${toString cfg.logoWidth}",
+        "height": "${toString cfg.logoHeight}",
         "padding": {
-          "top": "${cfg.logoPaddingTop}",
-          "left": "${cfg.logoPaddingLeft}",
-          "right": "${cfg.logoPaddingRight}",
+          "top": "${toString cfg.logoPaddingTop}",
+          "left": "${toString cfg.logoPaddingLeft}",
+          "right": "${toString cfg.logoPaddingRight}",
         },
       }
     '';
