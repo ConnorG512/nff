@@ -93,6 +93,54 @@ in
         '';
       };
 
+      displayKeyWidth = lib.mkOption {
+        type = lib.types.int;
+        default = 12;
+        description = ''
+          Aligns keys to the given width.
+        '';
+      };
+
+      displayKeyType = lib.mkOption {
+        type = lib.types.str;
+        default = "string";
+        description = ''
+          Key type.
+        '';
+      };
+      
+      displayBarWidth = lib.mkOption {
+        type = lib.types.int;
+        default = 10;
+        description = ''
+          With of percentage bar. 
+        '';
+      };
+
+      displayBarCharElapsed = lib.mkOption {
+        type = lib.types.str;
+        default = "■";
+        description = ''
+          Character for the elapsed portion of the bar.
+        '';
+      };
+
+      displayBarCharTotal = lib.mkOption {
+        type = lib.types.str;
+        default = "-";
+        description = ''
+          Character for the total portion of the bar.
+        '';
+      };
+
+      displayPercentType = lib.mkOption {
+        type = lib.types.str;
+        default = "red";
+        description = ''
+          Title color.
+        '';
+      };
+
     };
   };
 
@@ -105,12 +153,12 @@ in
       "logo": {
         "type": "auto",
         "source": "${cfg.logoSource}",
-        "width": "${toString cfg.logoWidth}",
-        "height": "${toString cfg.logoHeight}",
+        "width": ${toString cfg.logoWidth},
+        "height": ${toString cfg.logoHeight},
         "padding": {
-          "top": "${toString cfg.logoPaddingTop}",
-          "left": "${toString cfg.logoPaddingLeft}",
-          "right": "${toString cfg.logoPaddingRight}",
+          "top": ${toString cfg.logoPaddingTop},
+          "left": ${toString cfg.logoPaddingLeft},
+          "right": ${toString cfg.logoPaddingRight},
         }
       },
       "display": {
@@ -118,6 +166,25 @@ in
         "color": {
           "keys": "${cfg.displayColorKeys}"
           "title": "${cfg.displayColorTitle}"
+        },
+        "key": {
+          "width": ${toString cfg.displayKeyWidth}
+          "type": ${toString cfg.displayKeyType}
+        },
+        "bar": {
+          "width": ${toString cfg.displayBarWidth},
+          "char": {
+            "elapsed": "${cfg.displayBarCharElapsed}",
+            "total": "${cfg.displayBarCharTotal}",
+          },
+        },
+        "percent": {
+          "type": ${toString cfg.displayPercentType},
+          "color": {
+            "green": "green",
+            "yellow": "light_yellow",
+            "red": "light_red"
+          },
         },
       },
       "modules": [],
