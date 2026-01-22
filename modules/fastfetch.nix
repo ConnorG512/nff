@@ -6,12 +6,12 @@
 }:
 
 let
-  cfg = config.programs.fastfetch;
+  cfg = config.programs.nff;
 in
 {
-  options = {
+  options.programs.nff = {
 
-    fastfetch.enable = lib.mkOption {
+    enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = ''
