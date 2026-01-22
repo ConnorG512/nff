@@ -1,7 +1,7 @@
 # Configuration:
 
-[!NOTE]
-Configuration options are not complete and will be added here as they have been finished. Nff is not currently in a particularly usable state.
+> [!NOTE]
+> Configuration options are not complete and will be added here as they have been finished. Nff is not currently in a particularly usable state.
 
 ## Enabling
 
