@@ -68,7 +68,14 @@ in
             };
           };
         };
-        modules = [ "title" "separator" ];
+        modules = [ 
+          "title"
+          "os"
+          "kernel"
+          "memory"
+          "cpu"
+          "uptime"
+        ];
       };
       description = "Fastfetch settings.";
     };
