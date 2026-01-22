@@ -172,5 +172,5 @@ Module list.<br>
 **Type**: *List of attributes*<br>
 **Default**: *\[ "title" "os" "kernel" "memory" "cpu" "uptime"\]*<br>
 ```
-programs.nff.settings.display.percent.color.red;
+programs.nff.settings.modules;
 ```
