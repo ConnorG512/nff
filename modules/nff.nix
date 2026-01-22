@@ -38,6 +38,25 @@ in
             keys = "blue"; 
             title = "red"; 
           };
+          key = {
+            width = 12;
+            type = "none";
+          };
+          bar = {
+            width = 10;
+            char = {
+              elapsed = "■";
+              total = "-";
+            };
+          };
+          percent = {
+            type = 9;
+            color = {
+              green = "green";
+              yellow = "light_yellow";
+              red = "light_red";
+            };
+          };
         };
       };
       description = "Fastfetch settings.";
