@@ -5,9 +5,9 @@ Configuration options are not complete and will be added here as they have been 
 
 ## Enabling
 
-Enable the use of nff.
-**Type**: *bool*
-**Default**: *false*
+Enable the use of nff.<br>
+**Type**: *bool*<br>
+**Default**: *false*<br>
 ```
   programs.nff.enable; 
 
@@ -15,44 +15,44 @@ Enable the use of nff.
 
 ## Logo options: 
 
-Logo width.
-**Type**: *int*
-**Default**: *65*
+Logo width.<br>
+**Type**: *int*<br>
+**Default**: *65*<br>
 ```
 programs.nff.settings.logo.width;
 
 ```
-Logo height.
-**Type**: *int*
-**Default**: *35*
+Logo height.<br>
+**Type**: *int*<br>
+**Default**: *35*<br>
 ```
 programs.nff.settings.logo.height;
 
 ```
-Logo source.
-**Type**: *string*
-**Default**: *"auto"*
+Logo source.<br>
+**Type**: *string*<br>
+**Default**: *"auto"*<br>
 ```
 programs.nff.settings.logo.source;
 
 ```
-Logo top padding.
-**Type**: *int*
-**Default**: *0*
+Logo top padding.<br>
+**Type**: *int*<br>
+**Default**: *0*<br>
 ```
 programs.nff.settings.logo.padding.top;
 
 ```
-Logo left padding.
-**Type**: *int*
-**Default**: *0*
+Logo left padding.<br>
+**Type**: *int*<br>
+**Default**: *0*<br>
 ```
 programs.nff.settings.logo.padding.left;
 
 ```
-Logo right padding.
-**Type**: *int*
-**Default**: *2*
+Logo right padding.<br>
+**Type**: *int*<br>
+**Default**: *2*<br>
 ```
 programs.nff.settings.logo.padding.right;
 
@@ -60,23 +60,23 @@ programs.nff.settings.logo.padding.right;
 
 ## Display options: 
 
-Characters used as separator.
-**Type**: *string*
-**Default**: *": "*
+Characters used as separator.<br>
+**Type**: *string*<br>
+**Default**: *": "*<br>
 ```
 programs.nff.settings.display.separator;
 ```
 
-Keys color.
-**Type**: *string*
-**Default**: *"blue"*
+Keys color.<br>
+**Type**: *string*<br>
+**Default**: *"blue"*<br>
 ```
 programs.nff.settings.display.color.keys;
 ```
 
-Title color.
-**Type**: *string*
-**Default**: *"red"*
+Title color.<br>
+**Type**: *string*<br>
+**Default**: *"red"*<br>
 ```
 programs.nff.settings.display.color.title;
 ```
