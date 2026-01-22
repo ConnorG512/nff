@@ -15,7 +15,7 @@ in
       type = lib.types.bool;
       default = false;
       description = ''
-        Wether to enable the use of the fastfetch system information terminal application.
+        Whether to enable the use of the fastfetch system information terminal application.
       '';
     };
 
