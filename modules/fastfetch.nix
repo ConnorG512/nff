@@ -48,7 +48,7 @@ in
     environment.systemPackages = [pkgs.fastfetch];
 
     environment.etc."fastfetch/config.jsonc".text = ''
-    // Generated file.
+    // Generated file from nvf.
     ${builtins.toJSON cfg.settings}  
     '';
   };
