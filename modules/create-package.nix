@@ -12,12 +12,8 @@ let
     '';
   });
   unwrappedPackage = pkgs.fastfetch;
-
-  selectedBinary = if isWrapped then 
-    wrappedPackage
-  else
-    unwrappedPackage;
 in
-{
-  environment.systemPackages = [ selectedBinary ];
-}
+  if isWrapped then 
+      wrappedPackage
+    else
+      unwrappedPackage
