@@ -49,46 +49,7 @@ in
 
     environment.etc."fastfetch/config.jsonc".text = ''
     // Generated file.
-    {
-      "logo": {
-        "type": "auto",
-        "source": "${cfg.logo.source}",
-        "width": ${toString cfg.logo.width},
-        "height": ${toString cfg.logo.height},
-        "padding": {
-          "top": ${toString cfg.logo.padding.top},
-          "left": ${toString cfg.logo.padding.left},
-          "right": ${toString cfg.logo.padding.right}
-        }
-      },
-      "display": {
-        "separator": "${cfg.display.separator}",
-        "color": {
-          "keys": "${cfg.display.color.keys}",
-          "title": "${cfg.display.color.title}"
-        },
-        "key": {
-          "width": ${toString cfg.display.key.width},
-          "type": "${cfg.displayKeyType}"
-        },
-        "bar": {
-          "width": ${toString cfg.display.bar.width},
-          "char": {
-            "elapsed": "${cfg.display.bar.charElapsed}",
-            "total": "${cfg.display.bar.charTotal}"
-          }
-        },
-        "percent": {
-          "type": ${toString cfg.display.percentType},
-          "color": {
-            "green": "green",
-            "yellow": "light_yellow",
-            "red": "light_red"
-          }
-        }
-      },
-      "modules": []
-    }
+    ${builtins.toJSON cfg.settings}  
     '';
   };
 }
