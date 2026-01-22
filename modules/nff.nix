@@ -33,8 +33,9 @@ in
       type = lib.types.attrsOf lib.types.anything;
       default = {
         logo = {
-          width = 65;
-          height = 35;
+          type = "builtin";
+          width = 30;
+          height = 15;
           source = "auto";
           padding = {
             top = 0;

@@ -26,16 +26,24 @@ Enable the fastfetch wrapper.<br>
 
 ## Logo options: 
 
+Logo type.<br>
+**Type**: *string*<br>
+**Default**: *builtin*<br>
+```
+programs.nff.settings.logo.type;
+
+```
+
 Logo width.<br>
 **Type**: *int*<br>
-**Default**: *65*<br>
+**Default**: *30*<br>
 ```
 programs.nff.settings.logo.width;
 
 ```
 Logo height.<br>
 **Type**: *int*<br>
-**Default**: *35*<br>
+**Default**: *15*<br>
 ```
 programs.nff.settings.logo.height;
 
