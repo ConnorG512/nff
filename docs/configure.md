@@ -17,7 +17,7 @@ Enable the fastfetch wrapper.<br>
 **Type**: *bool*<br>
 **Default**: *true*<br>
 ```
-  programs.nff.enable; 
+  programs.nff.useWrapper; 
 
 ```
 > [!IMPORTANT]
