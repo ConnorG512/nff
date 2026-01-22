@@ -3,7 +3,7 @@
 > [!NOTE]
 > Configuration options are not complete and will be added here as they have been finished. Nff is not currently in a particularly usable state.
 
-## Enabling
+## General
 
 Enable the use of nff.<br>
 **Type**: *bool*<br>
@@ -12,6 +12,17 @@ Enable the use of nff.<br>
   programs.nff.enable; 
 
 ```
+
+Enable the fastfetch wrapper.<br>
+**Type**: *bool*<br>
+**Default**: *true*<br>
+```
+  programs.nff.enable; 
+
+```
+> [!IMPORTANT]
+> If the wrapper is disabled, `fastfetch -c /etc/fastfetch/config.jsonc` would need to be called manually. Should be used for testing.
+> Configuration file will still be generated even when disabled.
 
 ## Logo options: 
 

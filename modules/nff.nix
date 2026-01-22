@@ -21,6 +21,14 @@ in
       '';
     };
 
+    useWrapper = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = ''
+        Enable the fastfetch wrapper or to install the unwrapped package.
+      '';
+    };
+
     settings = lib.mkOption {
       type = lib.types.attrsOf lib.types.anything;
       default = {
@@ -66,10 +74,13 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    /*
-      Wrap fastfetch in a -c flag as configuration will be stored in /etc directory.
-    */
-    environment.systemPackages = [
+    
+    environment.systemPackages = 
+    if cfg.useWrapper then
+    [
+      /*
+        Wrap fastfetch in a -c flag as configuration will be stored in /etc directory.
+      */
       (pkgs.symlinkJoin {
         name = "fastfetch";
         buildInputs = [ pkgs.makeWrapper ];
@@ -79,7 +90,9 @@ in
             --append-flags "-c /etc/fastfetch/config.jsonc"
         '';
       })
-    ];
+    ]
+    else
+      [ pkgs.fastfetch ];
 
     environment.etc."fastfetch/config.jsonc".text = ''
     // Generated file from nff.
