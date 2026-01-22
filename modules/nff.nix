@@ -67,8 +67,8 @@ in
               red = "light_red";
             };
           };
-          modules = [ "title" "separator" ];
         };
+        modules = [ "title" "separator" ];
       };
       description = "Fastfetch settings.";
     };
