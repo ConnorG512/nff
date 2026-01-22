@@ -6,12 +6,12 @@
 }:
 
 let
-  cfg = config.programs.fastfetch;
+  cfg = config.programs.nff;
 in
 {
-  options = {
+  options.programs.nff = {
 
-    fastfetch.enable = lib.mkOption {
+    enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = ''
@@ -48,7 +48,7 @@ in
     environment.systemPackages = [pkgs.fastfetch];
 
     environment.etc."fastfetch/config.jsonc".text = ''
-    // Generated file.
+    // Generated file from nvf.
     ${builtins.toJSON cfg.settings}  
     '';
   };
