@@ -20,7 +20,7 @@ in
     };
 
     settings = lib.mkOption {
-      type = lib.types.attrsOf lib.types.any;
+      type = lib.types.attrsOf lib.types.anything;
       default = {
         logo = {
           width = 65;
