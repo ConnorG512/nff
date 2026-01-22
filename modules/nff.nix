@@ -84,24 +84,6 @@ in
 
   config = lib.mkIf cfg.enable {
     
-    environment.systemPackages = 
-    if cfg.useWrapper then
-    [
-      /*
-        Wrap fastfetch in a -c flag as configuration will be stored in /etc directory.
-      */
-      (pkgs.symlinkJoin {
-        name = "fastfetch";
-        buildInputs = [ pkgs.makeWrapper ];
-        paths = [ pkgs.fastfetch ];
-        postBuild = ''
-          wrapProgram $out/bin/fastfetch \
-            --append-flags "-c /etc/fastfetch/config.jsonc"
-        '';
-      })
-    ]
-    else
-      [ pkgs.fastfetch ];
 
     environment.etc."fastfetch/config.jsonc".text = ''
     // Generated file from nff.
