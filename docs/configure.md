@@ -3,6 +3,8 @@
 > [!NOTE]
 > Configuration options are not complete and will be added here as they have been finished. Nff is not currently in a particularly usable state.
 
+For more configuration options see the [fastfetch configuration options](https://github.com/fastfetch-cli/fastfetch/wiki/Configuration).
+
 ## General
 
 Enable the use of nff.<br>
