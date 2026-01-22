@@ -7,8 +7,9 @@
 
 let
   cfg = config.programs.nff;
-  
 
+  createPackage = import ./create-package.nix;
+  finalPackage = createPackage{ inherit pkgs; isWrapped = cfg.useWrapper; };
 in
 {
   options.programs.nff = {
@@ -84,7 +85,8 @@ in
 
   config = lib.mkIf cfg.enable {
     
-
+    environment.systemPackages = [ finalPackage ];
+    
     environment.etc."fastfetch/config.jsonc".text = ''
     // Generated file from nff.
     ${builtins.toJSON cfg.settings}  
