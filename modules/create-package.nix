@@ -11,7 +11,7 @@ let
         --append-flags "-c /etc/fastfetch/config.jsonc"
     '';
   });
-  unwrappedPackage = [ pkgs.fastfetch ];
+  unwrappedPackage = pkgs.fastfetch;
 
   selectedBinary = if isWrapped then 
     wrappedPackage
