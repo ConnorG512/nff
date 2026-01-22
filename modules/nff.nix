@@ -15,7 +15,7 @@ in
       type = lib.types.bool;
       default = false;
       description = ''
-        Wether to enable the use of the fastfetch system information terminal application.
+        Whether to enable the use of the fastfetch system information terminal application.
       '';
     };
 
@@ -48,7 +48,7 @@ in
     environment.systemPackages = [pkgs.fastfetch];
 
     environment.etc."fastfetch/config.jsonc".text = ''
-    // Generated file from nvf.
+    // Generated file from nff.
     ${builtins.toJSON cfg.settings}  
     '';
   };
