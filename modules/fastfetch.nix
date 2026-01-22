@@ -9,9 +9,9 @@ let
   cfg = config.programs.fastfetch;
 in
 {
-  options.programs.fastfetch = {
+  options = {
 
-    enable = lib.mkOption {
+    fastfetch.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = ''
@@ -19,7 +19,7 @@ in
       '';
     };
 
-    logo.width = lib.mkOption {
+    fastfetch.logo.width = lib.mkOption {
       type = lib.types.int;
       default = 65;
       description = ''
@@ -27,7 +27,7 @@ in
       '';
     };
     
-    logo.height = lib.mkOption {
+    fastfetch.logo.height = lib.mkOption {
       type = lib.types.int;
       default = 35;
       description = ''
@@ -35,7 +35,7 @@ in
       '';
     };
 
-    logo.source = lib.mkOption {
+    fastfetch.logo.source = lib.mkOption {
       type = lib.types.str;
       default = "auto";
       description = ''
@@ -44,7 +44,7 @@ in
     };
 
       
-    logo.padding.top = lib.mkOption {
+    fastfetch.logo.padding.top = lib.mkOption {
       type = lib.types.int;
       default = 0;
       description = ''
@@ -52,7 +52,7 @@ in
       '';
     };
 
-    logo.padding.left = lib.mkOption {
+    fastfetch.logo.padding.left = lib.mkOption {
       type = lib.types.int;
       default = 0;
       description = ''
@@ -60,7 +60,7 @@ in
       '';
     };
     
-    logo.padding.right = lib.mkOption {
+    fastfetch.logo.padding.right = lib.mkOption {
       type = lib.types.int;
       default = 2;
       description = ''
@@ -68,7 +68,7 @@ in
       '';
     };
 
-    display.separator = lib.mkOption {
+    fastfetch.display.separator = lib.mkOption {
       type = lib.types.str;
       default = ": ";
       description = ''
@@ -76,7 +76,7 @@ in
       '';
     };
       
-    display.color.keys = lib.mkOption {
+    fastfetch.display.color.keys = lib.mkOption {
       type = lib.types.str;
       default = "blue";
       description = ''
@@ -84,7 +84,7 @@ in
       '';
     };
     
-    display.color.title = lib.mkOption {
+    fastfetch.display.color.title = lib.mkOption {
       type = lib.types.str;
       default = "red";
       description = ''
@@ -92,7 +92,7 @@ in
       '';
     };
 
-    display.key.width = lib.mkOption {
+    fastfetch.display.key.width = lib.mkOption {
       type = lib.types.int;
       default = 12;
       description = ''
@@ -100,7 +100,7 @@ in
       '';
     };
 
-    display.key.type = lib.mkOption {
+    fastfetch.display.key.type = lib.mkOption {
       type = lib.types.str;
       default = "string";
       description = ''
@@ -108,7 +108,7 @@ in
       '';
     };
 
-    display.bar.width = lib.mkOption {
+    fastfetch.display.bar.width = lib.mkOption {
       type = lib.types.int;
       default = 10;
       description = ''
@@ -116,7 +116,7 @@ in
       '';
     };
 
-    display.bar.charElapsed = lib.mkOption {
+    fastfetch.display.bar.charElapsed = lib.mkOption {
       type = lib.types.str;
       default = "■";
       description = ''
@@ -124,7 +124,7 @@ in
       '';
     };
 
-    display.bar.charTotal = lib.mkOption {
+    fastfetch.display.bar.charTotal = lib.mkOption {
       type = lib.types.str;
       default = "-";
       description = ''
@@ -132,7 +132,7 @@ in
       '';
     };
     
-    display.percentType = lib.mkOption {
+    fastfetch.display.percentType = lib.mkOption {
       type = lib.types.int;
       default = 9;
       description = ''
