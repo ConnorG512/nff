@@ -28,7 +28,7 @@ Enable the fastfetch wrapper.<br>
 
 Logo type.<br>
 **Type**: *string*<br>
-**Default**: *builtin*<br>
+**Default**: *"builtin"*<br>
 ```
 programs.nff.settings.logo.type;
 
