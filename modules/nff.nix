@@ -7,6 +7,8 @@
 
 let
   cfg = config.programs.nff;
+  
+
 in
 {
   options.programs.nff = {
@@ -64,7 +66,20 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [pkgs.fastfetch];
+    /*
+      Wrap fastfetch in a -c flag as configuration will be stored in /etc directory.
+    */
+    environment.systemPackages = [
+      (pkgs.symLinkJoin {
+        name = "fastfetch";
+        buildInputs = [ pkgs.makeWrapper ];
+        paths = [ pkgs.fastfetch ];
+        postBuild = ''
+          wrapProgram $out/bin/fastfetch \
+            --append-flags "-c /etc/fastfetch/config.jsonc"
+        '';
+      })
+    ];
 
     environment.etc."fastfetch/config.jsonc".text = ''
     // Generated file from nff.
