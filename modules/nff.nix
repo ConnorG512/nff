@@ -70,7 +70,7 @@ in
       Wrap fastfetch in a -c flag as configuration will be stored in /etc directory.
     */
     environment.systemPackages = [
-      (pkgs.symLinkJoin {
+      (pkgs.symlinkJoin {
         name = "fastfetch";
         buildInputs = [ pkgs.makeWrapper ];
         paths = [ pkgs.fastfetch ];
