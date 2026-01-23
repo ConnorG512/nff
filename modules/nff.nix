@@ -41,9 +41,10 @@ in
     
     environment.systemPackages = [ finalPackage ];
     
-    environment.etc."fastfetch/config.jsonc".text = ''
-    // Generated file from nff.
-    ${builtins.toJSON cfg.settings}  
-    '';
+    environment.etc."fastfetch/config.jsonc".text = builtins.toJSON {
+      logo = cfg.settings.logo;
+      display = cfg.settings.display;
+      modules = cfg.settings.modules;
+    };
   };
 }
