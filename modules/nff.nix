@@ -42,9 +42,9 @@ in
     environment.systemPackages = [ finalPackage ];
     
     environment.etc."fastfetch/config.jsonc".text = builtins.toJSON {
-      enable = cfg.settings.enable;
-      useWrapper = cfg.settings.useWrapper;
       logo = cfg.settings.logo;
+      display = cfg.settings.display;
+      modules = cfg.settings.modules;
     };
   };
 }
