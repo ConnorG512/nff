@@ -12,6 +12,12 @@ let
   finalPackage = createPackage{ inherit pkgs; isWrapped = cfg.useWrapper; };
 in
 {
+  imports = [
+    ./options/logo.nix
+    ./options/display.nix
+    ./options/modules.nix
+  ];
+
   options.programs.nff = {
 
     enable = lib.mkOption {
