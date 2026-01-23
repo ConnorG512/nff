@@ -12,6 +12,12 @@ let
   finalPackage = createPackage{ inherit pkgs; isWrapped = cfg.useWrapper; };
 in
 {
+  imports = [
+    ./options/logo.nix
+    ./options/display.nix
+    ./options/modules.nix
+  ];
+
   options.programs.nff = {
 
     enable = lib.mkOption {
@@ -30,20 +36,17 @@ in
       '';
     };
 
-    settings = lib.mkOption {
-      type = lib.types.attrsOf lib.types.anything;
-      default = import ./default-values.nix;
-      description = "Fastfetch settings.";
-    };
+    settings = {};
   };
 
   config = lib.mkIf cfg.enable {
     
     environment.systemPackages = [ finalPackage ];
     
-    environment.etc."fastfetch/config.jsonc".text = ''
-    // Generated file from nff.
-    ${builtins.toJSON cfg.settings}  
-    '';
+    environment.etc."fastfetch/config.jsonc".text = builtins.toJSON {
+      logo = cfg.settings.logo;
+      display = cfg.settings.display;
+      modules = cfg.settings.modules;
+    };
   };
 }
