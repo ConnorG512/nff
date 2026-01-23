@@ -30,11 +30,7 @@ in
       '';
     };
 
-    settings = lib.mkOption {
-      type = lib.types.attrsOf lib.types.anything;
-      default = import ./default-values.nix;
-      description = "Fastfetch settings.";
-    };
+    settings = {};
   };
 
   config = lib.mkIf cfg.enable {
