@@ -5,7 +5,7 @@
 
 let
   defaultValues = import ../default-values.nix;
-in 
+in
 {
   options.programs.nff.settings = {
     modules = lib.mkOption {
