@@ -8,8 +8,6 @@
 let
   cfg = config.programs.nff;
   
-  
-
   createPackage = import ./create-package.nix;
   finalPackage = createPackage{ inherit pkgs; isWrapped = cfg.useWrapper; };
 in
@@ -34,8 +32,7 @@ in
 
     settings = lib.mkOption {
       type = lib.types.attrsOf lib.types.anything;
-      default = {
-      };
+      default = import ./default-values.nix;
       description = "Fastfetch settings.";
     };
   };
