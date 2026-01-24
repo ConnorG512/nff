@@ -83,7 +83,7 @@ in
 {
   options.programs.nff.settings = {
     modules = lib.mkOption {
-      type = lib.types.oneOf [ lib.types.enum [ supportedModules ]];
+      type = lib.types.enum supportedModules;
       default = defaultValues.modules;
       description = "List of modules.";
     };
