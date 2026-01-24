@@ -13,6 +13,10 @@ Display configuration can be found [here](./display.md).<br>
 
 Module configuration for fastfetch can be found [here](./modules.md).<br>
 
+All properties do include a default value which can be found in this Nix [module](../../modules/default-values.nix) or found in each configuration page.<br>
+
+Example of nff being used can be found [here](../example.md).
+
 ## Finding configuration options:
 
 For more configuration options see the [fastfetch configuration options](https://github.com/fastfetch-cli/fastfetch/wiki/Configuration).
