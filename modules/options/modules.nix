@@ -94,7 +94,7 @@ in
       type = lib.types.listOf (lib.types.either 
       (lib.types.enum supportedModules)
       (lib.types.submodule {
-        freeformType = lib.types.arrtsOf lib.types.anything; # Custom options for specific id's.
+        freeformType = lib.types.attrsOf lib.types.anything; # Custom options for specific id's.
         options.type = lib.mkOption {
           type = lib.types.enum(supportedModules ++ [ "custom" ]);
           description = "Custom options for a fastfetch module.";
