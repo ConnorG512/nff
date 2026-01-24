@@ -1,6 +1,4 @@
-# Configuration:
-
-## General
+# General
 
 Enable the use of nff.<br>
 **Type**: *bool*<br>
