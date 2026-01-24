@@ -1,7 +1,7 @@
 # Configuration:
 
 > [!NOTE]
-> Configuration options are not complete and will be added here as they have been finished. Nff is not currently in a particularly usable state.
+> Configuration may not be complete and if missing will be added over time. Currently, display, logo as well as modules are supported.
 
 For more configuration options see the [fastfetch configuration options](https://github.com/fastfetch-cli/fastfetch/wiki/Configuration).
 
