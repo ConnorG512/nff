@@ -82,8 +82,24 @@ let
 in
 {
   options.programs.nff.settings = {
+    
+    /*
+      Modules in fastfetch can be a string on its own "cpu" or a braced of extra customised options.
+      Both need to be supported whilst still keeping error checking. So need to check for an enum 
+      of correct types as well as taken account the {} options.
+
+      in {} options, the "id" parameter refers to the name in single "".
+    */
     modules = lib.mkOption {
-      type = lib.types.listOf (lib.types.enum supportedModules);
+      type = lib.types.listOf (lib.types.either 
+      (lib.types.enum supportedModules)
+      (lib.types.submodule {
+        freeformType = lib.types.arrtsOf lib.types.anything; # Custom options for specific id's.
+        options.type = lib.mkOption {
+          type = lib.types.enum(supportedModules ++ [ "custom" ]);
+          description = "Custom options for a fastfetch module.";
+        };
+      }));
       default = defaultValues.modules;
       description = "List of modules.";
     };
