@@ -1,33 +1,4 @@
-# Configuration:
-
-> [!NOTE]
-> Configuration options are not complete and will be added here as they have been finished. Nff is not currently in a particularly usable state.
-
-For more configuration options see the [fastfetch configuration options](https://github.com/fastfetch-cli/fastfetch/wiki/Configuration).
-
-## General
-
-Enable the use of nff.<br>
-**Type**: *bool*<br>
-**Default**: *false*<br>
-```
-  programs.nff.enable; 
-
-```
-
-Enable the fastfetch wrapper.<br>
-**Type**: *bool*<br>
-**Default**: *true*<br>
-```
-  programs.nff.useWrapper; 
-
-```
-> [!IMPORTANT]
-> If the wrapper is disabled, `fastfetch -c /etc/fastfetch/config.jsonc` would need to be called manually. Should be used for testing.
-> Configuration file will still be generated even when disabled.
-
-
-## Display options: 
+# Display options: 
 
 Characters used as separator.<br>
 **Type**: *string*<br>
@@ -112,16 +83,4 @@ Percent "red" color.<br>
 **Default**: *"light_red"*<br>
 ```
 programs.nff.settings.display.percent.color.red;
-```
-
-## Modules
-
-> [!TIP]
-> Full module options for fastfech can be found [here](https://github.com/fastfetch-cli/fastfetch/blob/dev/presets/all.jsonc).
-
-Module list.<br>
-**Type**: *List of attributes*<br>
-**Default**: *\[ "title" "os" "kernel" "memory" "cpu" "uptime"\]*<br>
-```
-programs.nff.settings.modules;
 ```

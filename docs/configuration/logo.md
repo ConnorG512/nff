@@ -1,4 +1,4 @@
-## Logo options: 
+# Logo options: 
 
 Logo type.<br>
 **Type**: *string*<br>
