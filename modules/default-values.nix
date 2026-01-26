@@ -29,6 +29,7 @@
     };
 
     bar = {
+
       width = 10;
       char = {
         elapsed = "■";
