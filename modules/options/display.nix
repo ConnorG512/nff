@@ -74,7 +74,7 @@ in
           percent = {
 
             type = lib.mkOption {
-              type = lib.types.int;
+              type = lib.types.enum [ 1 2 3 9 ];
               default = defaultValues.display.percent.type;
               description = "Percent Type.";
             };
