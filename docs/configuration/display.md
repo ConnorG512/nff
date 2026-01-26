@@ -30,7 +30,8 @@ programs.nff.settings.display.key.width;
 
 Key Type.<br>
 **Type**: *string*<br>
-**Default**: *"none"*<br>
+**Default**: *"both"*<br>
+**Options**: *"both", "string", "icon", "none".*
 ```
 programs.nff.settings.display.key.type;
 ```
