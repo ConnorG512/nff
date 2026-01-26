@@ -42,7 +42,7 @@ in
             };
 
             type = lib.mkOption {
-              type = lib.types.str;
+              type = lib.types.enum([ "string" "icon" "both" "none" ]);
               default = defaultValues.display.key.type;
               description = "Key type.";
             };
