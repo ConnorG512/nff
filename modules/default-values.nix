@@ -2,6 +2,7 @@
 
 {
   logo = {
+
     type = "builtin";
     width = 30;
     height = 15;
@@ -14,12 +15,15 @@
   };
 
   display = {
+
     separator = ": ";
     color = { 
       keys = "blue"; 
       title = "red"; 
     };
+
     key = {
+
       width = 12;
       type = "none";
     };
@@ -33,6 +37,7 @@
     };
 
     percent = {
+
       type = 9;
       color = {
         green = "green";
