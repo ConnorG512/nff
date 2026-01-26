@@ -25,7 +25,7 @@
     key = {
 
       width = 12;
-      type = "none";
+      type = "both";
     };
 
     bar = {
