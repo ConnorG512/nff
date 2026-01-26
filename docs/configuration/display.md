@@ -29,8 +29,8 @@ programs.nff.settings.display.key.width;
 ```
 
 Key Type.<br>
-**Type**: *string*<br>
-**Default**: *"none"*<br>
+**Type**: *list of strings enum*<br>
+**Default**: *"both"*<br>
 ```
 programs.nff.settings.display.key.type;
 ```
